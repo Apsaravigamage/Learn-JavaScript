@@ -10,5 +10,13 @@ function ageInDays() {
 }
 function reset(){
     document.getElementById('ageInDays').remove();
-    
+
 }
+
+//challenge 2: Cat Generator
+ function genetateCat(){
+     var image = document.createElement('img');
+     var div = document.getElementById('flex-cat-gen');
+     image.src ="download.jpg";
+     div,appendChild(image);
+ }
