@@ -20,3 +20,27 @@ function reset(){
      image.src="download.jpg"
      div.appendChild(image);
  }
+  
+ //Challenge 3: Rock,Paper,Scissors
+ function rpsGame(yourChoice){
+     console.log(yourChoice)
+     var humanChoice, botChoice ;
+    // humanChoice=yourChoice.id
+    // botChoice=numberToChoice(randToRpsInt());
+     //result= decideWinner(humanChoice, botChoice);
+     //message= finalMessage(result);// message :you won
+     rpsFrontEnd(yourChoice.id, botChoice,message);
+
+ }
+
+function randToRpsInt(){
+    return Math.floor(Math.random()*3);
+}
+
+function numberToChoice(number){
+    return['rock','paper','scissors'][number];
+}
+
+function decideWinner(yourChoice, computerChoice){
+    
+}
