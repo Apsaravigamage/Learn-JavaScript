@@ -148,3 +148,14 @@ function randomColors(){
 
  
 }
+
+// Challenge 5: Blackjack
+
+let BlackjackGame = {
+    'you':{'scoreSpan':''}
+}
+document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackhit);
+
+function blackjackhit(){
+    alert(" Click me");
+}
