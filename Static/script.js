@@ -154,6 +154,7 @@ function randomColors(){
 let BlackjackGame = {
     'you':{'scoreSpan':'#your-blackjack-result','div': '#your-box','score':0},
     'dealer':{'scoreSpan':'#dealer-blackjack-result','div':'#dealer-box','score':0},
+    'cards':['2','3','4','5','6','7','8','9','10','K','J','Q','A'],
 };
 
 const YOU=BlackjackGame['you']
@@ -162,22 +163,29 @@ const DEALER=BlackjackGame['dealer']
 const hitSound = new Audio('sounds/swish.m4a');
 
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackhit);
-document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackDeal);
+document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);
 
 
 function blackjackhit() {
-   showCard(YOU);
+   showCard(YOU); 
 }
 
 function showCard(activePlayer){
    let cardImage =document.createElement('img');
    cardImage.src='images/Q.png';
-   document.querySelector(activePlayer).appendChild(cardImage);
+   document.querySelector(activePlayer['div']).appendChild(cardImage);
    hitSound.play();
 }
 
 function blackjackDeal(){
     let yourImages = document.querySelector('#your-box').querySelectorAll('img');
-    console.log(yourImages);
-    yourImages[0].remove();
+    let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
+   
+    for (i=0; i<yourImages.length; i++){
+        yourImages[i].remove();
+    }
+
+    for (i=0; i<dealerImages.length; i++){
+        dealerImages[i].remove();
+    }
 }
